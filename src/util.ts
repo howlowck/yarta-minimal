@@ -9,4 +9,10 @@ type IsActionFunc<R extends { [key in keyof R]: AnyAction }> = <T extends keyof 
 //   <R extends { [key in keyof R]: AnyAction }>() =>
 //   (action, actionType: any): action is R[typeof actionType] => action.type === actionType
 
-// export const isAction = makeIsActionFunction<ReduxActions>()
+// const isAction: IsActionFunc<ReduxActions> = (action, actionType): action is ReduxActions[typeof actionType] => action.type === actionType
+
+// // export const isAction = makeIsActionFunction<ReduxActions>()
+
+// const makeIsActionFunction: <TReduxActions extends { [key in keyof TReduxActions]: AnyAction; }>() => IsActionFunc<TReduxActions> 
+//   = 
+//   <TRA extends { [key in keyof TRA]: AnyAction }>() => (action, actionType: any): action is TRA[typeof actionType] => action.type === actionType

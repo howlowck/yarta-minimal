@@ -3,6 +3,8 @@ const createTestFoobarAction = (payloadFoobar: number) => ({
   foobarPayload: payloadFoobar
 } as const)
 
-interface ReduxActions {
-  TESTFOOBAR: ReturnType<typeof createTestFoobarAction> 
+declare module 'yarta/reduxActions' {
+  interface ReduxActions {
+    TESTFOOBAR: ReturnType<typeof createTestFoobarAction> 
+  }
 }
